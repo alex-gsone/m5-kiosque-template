@@ -6,19 +6,13 @@ import menu
 
 
 def get_product_by_id(id: int):
-    i = 1
     for product in menu.products:
         if (product["_id"] == id):
-            print(product)
-            break
-        elif (i == len(menu.products)):
-            emptyDict = {}
-            print(emptyDict)
-        i = i+1
+            return product
+    return {}
 
 
 def get_products_by_type(type):
-
     lista = []
     for product in menu.products:
         if (product["type"] == type):
@@ -29,4 +23,4 @@ def get_products_by_type(type):
 
 if __name__ == "__main__":
 
-    print(get_products_by_type('drink'))
+    print(get_product_by_id(28))
