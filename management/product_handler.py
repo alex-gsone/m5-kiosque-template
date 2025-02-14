@@ -21,6 +21,12 @@ def get_products_by_type(type):
     return lista
 
 
-if __name__ == "__main__":
-
-    print(get_product_by_id(28))
+def add_product(menu, **new_product):
+    id = 0
+    for product in menu:
+        if (product["_id"] > id):
+            id = product["_id"]
+    #new_product = {"_id": 1+id, **new_product}
+    new_product["_id"] = 1+id
+    menu.append(new_product)
+    return new_product
